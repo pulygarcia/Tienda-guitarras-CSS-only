@@ -1,0 +1,425 @@
+:root {
+    --primary: #e99401;
+    --negro: #262626;
+    --blanco: #FFF;
+    --fuente-principal: 'Outfit', sans-serif;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-size: 2rem;
+    font-family: var(--fuente-principal);
+    line-height: 1.5;
+}
+img {
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+[class*="container"]{
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 95%;
+}
+
+[class*="__boton"]{
+    padding: 1rem 5rem;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 2px solid var(--primary);
+    transition: background-color .3s ease;
+}
+[class*="__boton"]:hover{
+    background-color: #e99401;
+}
+
+[class*="__heading"]{
+    text-align: center;
+    color: #e99401;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+
+/*HEADER*/
+
+.header{
+    padding: 5rem 0;
+    background-image: linear-gradient(to bottom, rgb(0 0 0 / .5), rgb(0 0 0 / .5)), url(../img/header.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.header__barra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+@media (min-width: 768px){
+    .header__barra{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.header__logo{
+    width: 25rem;
+}
+
+.navegacion{
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.navegacion__enlace{
+    color: #FFF;
+    text-transform: uppercase;
+    padding: .5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: background-color .3s ease;
+}
+.navegacion__enlace:hover{
+    background-color: #e99401;
+}
+
+.modelo{
+    color: #FFF;
+    text-align: center;
+}
+@media (min-width: 768px){
+    .modelo{
+        max-width: 50%;
+        text-align: left;
+        width: 50%;
+    }
+}
+
+.modelo__titulo{
+    font-size: 5rem;
+}
+@media (min-width: 1024px){
+    .modelo__titulo{
+        font-size: 8rem;
+    }
+}
+
+.modelo__precio{
+    font-size: 6rem;
+    font-weight: 900;
+    color: #e99401;
+    margin-top: 0;
+}
+
+.header__guitarra{
+    display: none;
+}
+@media (min-width: 992px){
+    .header__guitarra{
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        animation-name: mostrarimagen;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+
+    }
+}
+
+@keyframes mostrarimagen{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/*SECCION GUITARRAS*/
+
+.guitarras{
+    margin: 5rem 0;
+}
+
+@media (min-width: 768px){
+    .guitarras__grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+@media (min-width: 1024px){
+    .guitarras__grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.guitarra{
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}/*las 2 ultimas lineas son para la page interna de producto*/
+.guitarra:last-of-type{
+    margin-bottom: 0;
+}
+@media (min-width: 768px){
+    .guitarra{
+        margin-bottom: 0;
+    }
+}
+
+.guitarra__nombre{
+    font-size: 2.8rem;
+    text-transform: uppercase;
+}
+
+.guitarra__descripcion{
+    font-size: 1.8rem;
+}
+
+.guitarra__precio{
+    font-size: 4rem;
+    font-weight: 900;
+    color: #e99401;
+    margin-top: 0;
+}
+
+.guitarra__boton{
+    color: black;
+    border: 2px solid #e99401;
+    padding: 1rem;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.guitarra__boton--interna{
+    background-color: #e99401;
+    color: #FFF;
+    border: none;
+}
+.guitarra__boton--interna:hover{
+    background-color: #262626;
+}
+
+.guitarra__label{
+    display: block;
+}
+
+.guitarra__input{
+    display: block;
+    padding:  .5rem;
+    border: 2px solid #e99401;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/*HERO*/
+
+.hero{
+    background-image: linear-gradient(to right, rgb(0 0 0 / .65) 0%, rgb(0 0 0 / .65)100%), url(../img/cursos_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10rem 0;
+    margin-top: 10rem;
+}
+
+@media (min-width: 768px){
+    .hero__grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.hero__contenido{
+    text-align: center;
+}
+@media (min-width: 768px){
+    .hero__contenido{
+        grid-column: 2/3;
+    }
+}
+
+.hero__texto{
+    color: #FFF;
+    margin-bottom: 3.8rem;
+}
+
+/*BLOG*/
+
+.blog__grid{
+    display: grid;
+    gap: 4rem;
+}
+@media (min-width: 768px){
+    .blog__grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 992px){
+    .blog__grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px){
+    .blog__grid--3{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+/*ENTRADA DE BLOG*/
+.entrada{
+    margin: 0 auto;
+    max-width: 70rem;
+}
+
+.entrada__contenido{
+    padding: 2rem;
+}
+
+.entrada__titulo{
+    font-weight: 300;
+    margin: 0;
+    font-size: 2.8rem;
+    line-height: 1.2;
+}
+
+.entrada__fecha{
+    color: #e99401;
+    font-size: 1.8rem;
+}
+
+.entrada__texto{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+.entrada__boton{
+    color: black;
+    display: block;
+    text-align: center;
+}
+
+
+/*NOSOTROS*/
+
+@media (min-width: 768px){
+    .nosotros__grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+}
+
+.nosotros__texto{
+    line-height: 1.8;
+    text-align: center;
+}
+@media (min-width: 768px){
+    .nosotros__texto{
+        text-align: left;
+    }
+}
+
+
+/*FOOTER*/
+
+.footer{
+    background-color: #262626;
+    padding: 4rem 0;
+    margin-top: 2rem;
+}
+
+.footer__contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+@media (min-width: 768px){
+    .footer__contenido{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer__nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2.3rem;
+}
+@media (min-width: 768px){
+    .footer__nav{
+        flex-direction: row;
+    }
+}
+
+.footer__enlace{
+    color: #FFF;
+    font-weight: 700;
+}
+.footer__enlace:hover{
+    color: #e99401;
+}
+
+.footer__copyright{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+
+.footer__texto{
+    color: #FFF;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+}
+.footer__texto span{
+    font-size: 1.3rem;
+    text-transform: none;
+    color: #e99401;
+}
+
+.footer__icono{
+    transition: transform .2s ease;
+}
+.footer__icono:hover{
+    transform: scale(1.2);
+}
+
